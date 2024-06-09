@@ -19,9 +19,9 @@ in {
       ./gnome.nix
       ./librewolf.nix
       ./direnv.nix
+      ./code
     ];
     home.packages = with pkgs; [
-      vscode
       steam
     ];
   };
