@@ -1,6 +1,18 @@
 {config, ...}: {
+  imports = [./fingerprint-fix.nix];
+  services.xserver = {
+    enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
+  };
+  services.gnome = {
+    gnome-online-accounts.enable = true;
+  };
+
   # GDM should not allow fingerprint authentication for login as it breaks the keyring.
   # In addition, fingerprint authentication seems to be slow and buggy without these hacks.
+  # Most of these options don't seem to work as expected individually, but in combination
+  # produce an adequate result.
   programs.dconf =
     if config.services.fprintd.enable
     then {

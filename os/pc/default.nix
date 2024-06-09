@@ -6,7 +6,7 @@
     ./networking.nix
     ./fingerprint.nix
     ./printing.nix
-    ./gnome
+    ./gnome.nix
     ./steam-ready.nix
   ];
 }
