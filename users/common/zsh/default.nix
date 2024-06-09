@@ -29,13 +29,6 @@ in {
     autosuggestion.enable = true;
     dotDir = ".config/zsh";
     initExtraFirst = ''
-      # hostfetch
-      [[ $SHLVL -eq 1 ]] && ${hostfetch}/bin/hostfetch
-
-      # restore backward-delete-char for Backspace in the incremental
-      # search keymap so it keeps working there:
-      bindkey -M isearch '^?' backward-delete-char
-
       # fzf-tab
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
       zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS} # set list-colors to enable filename colorizing
@@ -48,22 +41,30 @@ in {
       # syntax highlighting
       source ${pkgs.zsh-f-sy-h}/share/zsh/site-functions/F-Sy-H.plugin.zsh
 
-      # powerlevel10k
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source ${./powerlevel10k.zsh}
+      # skip in tty
+      if [[ -n $DISPLAY ]];
+      then
+        # hostfetch
+        [[ $SHLVL -eq 1 ]] && ${hostfetch}/bin/hostfetch
 
-      # shift keybindings
-      shift-arrow() {
-        ((REGION_ACTIVE)) || zle set-mark-command
-        zle $1
-      }
-      shift-left()  shift-arrow backward-char
-      shift-right() shift-arrow forward-char
-      zle -N shift-left
-      zle -N shift-right
+        # powerlevel10k
+        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+        source ${./powerlevel10k.zsh}
 
-      bindkey $terminfo[kLFT] shift-left
-      bindkey $terminfo[kRIT] shift-right
+        # shift keybindings
+        shift-arrow() {
+          ((REGION_ACTIVE)) || zle set-mark-command
+          zle $1
+        }
+        shift-left()  shift-arrow backward-char
+        shift-right() shift-arrow forward-char
+        zle -N shift-left
+        zle -N shift-right
+
+        bindkey $terminfo[kLFT] shift-left
+        bindkey $terminfo[kRIT] shift-right
+      fi
+
     '';
   };
 
