@@ -1,3 +1,3 @@
 # NixOS
 ## To Do
-* "shift-left" undefined key error in (non-graphical) console
+* "shift-left" undefined key error in tty
