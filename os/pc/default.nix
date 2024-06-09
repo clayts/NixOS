@@ -7,5 +7,6 @@
     ./fingerprint.nix
     ./printing.nix
     ./gnome
+    ./steam-ready.nix
   ];
 }
