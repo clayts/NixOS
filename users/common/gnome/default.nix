@@ -13,6 +13,7 @@
       wallpaper-fetch
       rounded-window-corners-reborn
       gnomeExtensions.grand-theft-focus
+      gnomeExtensions.appindicator
 
       # Apps
       gnome-console
@@ -47,7 +48,7 @@
     "org/gnome/desktop/interface" = {
       font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.sansSerif 0) + " " + "11"}";
       document-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.serif 0) + " " + "11"}";
-      monospace-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.monospace 0) + " " + "11"}";
+      monospace-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.monospace 0) + " " + "Semilight 11"}";
       icon-theme = "Papirus";
       cursor-theme = "Bibata-Modern-Classic";
       gtk-enable-primary-paste = false;
@@ -62,8 +63,16 @@
       switch-windows-backward = ["<Shift><Super>Tab"];
     };
     "org/gnome/shell" = {
-      favorite-apps = ["librewolf.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop"];
-      enabled-extensions = ["grand-theft-focus@zalckos.github.com" "rounded-window-corners@fxgn"];
+      favorite-apps = [
+        "librewolf.desktop"
+        "org.gnome.Nautilus.desktop"
+        "org.gnome.Console.desktop"
+      ];
+      enabled-extensions = [
+        "grand-theft-focus@zalckos.github.com"
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "rounded-window-corners@fxgn"
+      ];
     };
   };
 }
