@@ -2,9 +2,7 @@
   pkgs,
   config,
   ...
-}: let
-  fontSize = "11";
-in {
+}: {
   home.packages = let
     wallpaper-fetch = pkgs.writeShellScriptBin "gnome-wallpaper-fetch" (builtins.readFile ./gnome-wallpaper-fetch.sh);
     rounded-window-corners-reborn = pkgs.callPackage ./rounded-window-corners-reborn.nix {};
@@ -47,9 +45,9 @@ in {
   '';
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.sansSerif 0) + " " + fontSize}";
-      document-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.serif 0) + " " + fontSize}";
-      monospace-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.monospace 0) + " " + fontSize}";
+      font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.sansSerif 0) + " " + "11"}";
+      document-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.serif 0) + " " + "11"}";
+      monospace-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.monospace 0) + " " + "9"}";
       icon-theme = "Papirus";
       cursor-theme = "Bibata-Modern-Classic";
       gtk-enable-primary-paste = false;
