@@ -47,7 +47,7 @@
     "org/gnome/desktop/interface" = {
       font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.sansSerif 0) + " " + "11"}";
       document-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.serif 0) + " " + "11"}";
-      monospace-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.monospace 0) + " " + "9"}";
+      monospace-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.monospace 0) + " " + "11"}";
       icon-theme = "Papirus";
       cursor-theme = "Bibata-Modern-Classic";
       gtk-enable-primary-paste = false;
