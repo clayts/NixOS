@@ -37,5 +37,6 @@
   },
   "git.autofetch": true,
   "git.terminalGitEditor": true,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "git.suggestSmartCommit": false,
 }
