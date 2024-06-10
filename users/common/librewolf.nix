@@ -1,8 +1,6 @@
 {
   programs.librewolf = {
     enable = true;
-    settings = {
-      "webgl.disabled" = false;
-    };
+    settings = {"webgl.disabled" = false;};
   };
 }
