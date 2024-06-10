@@ -390,6 +390,8 @@
   "terminal.integrated.customGlyphs": false,
   "workbench.iconTheme": "file-icons",
   "workbench.colorTheme": "Adwaita Dark",
+  "terminal.integrated.smoothScrolling": true,
+  "git.terminalGitEditor": true,
   // "rust-analyzer.cargo.features": [
   //   "wasm32"
   // ],
