@@ -24,10 +24,10 @@ in {
   home.file.".config/VSCodium/User/settings.json".source = ./settings.json;
   home.file.".config/VSCodium/User/keybindings.json".source = ./keybindings.json;
   home.packages = [
-    (pkgs.symlinkJoin
+    (pkgs.writeShellApplication
       {
         name = "code";
-        paths =
+        runtimeInputs =
           [
             (pkgs.vscode-with-extensions.override {
               vscode = pkgs.vscodium;
@@ -35,6 +35,9 @@ in {
             })
           ]
           ++ (builtins.concatLists (builtins.catAttrs "packages" bundles));
+        text = ''
+          exec codium "$@" 2> "$HOME/.config/Code/logs/stderr"
+        '';
       })
   ];
 }

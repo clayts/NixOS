@@ -11,7 +11,6 @@ in {
   home.shellAliases = {
     edit = "$EDITOR";
     open = "xdg-open";
-    code = "code 2> $HOME/.config/Code/logs/stderr";
     ls = "eza --icons=always --group-directories-first";
     lt = "eza --tree --icons=always --group-directories-first";
     la = "eza -al --icons=always --time-style=relative --color-scale-mode=gradient --color-scale --group-directories-first";
