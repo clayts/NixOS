@@ -1,417 +1,46 @@
 {
-  "workbench.startupEditor": "none",
-  "breadcrumbs.enabled": false,
-  "errorLens.fontStyleItalic": true,
-  "terminal.integrated.letterSpacing": 1,
-  // "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-  "window.restoreWindows": "none",
+  "terminal.integrated": {
+    "letterSpacing": 1,
+    "smoothScrolling": true
+  },
+  "window": {
+    "restoreWindows": "none",
+    "titleBarStyle": "custom",
+    "menuBarVisibility": "toggle"
+  },
   "explorer.confirmDragAndDrop": false,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "comment",
-        "settings": {
-          "fontStyle": "italic"
+  "editor": {
+    "tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": "comment",
+          "settings": {
+            "fontStyle": "italic"
+          }
         }
-      }
+      ]
+    },
+    "wordWrap": "on",
+    "fontLigatures": "'calt', 'ss01'",
+    "formatOnSave": true,
+    "smoothScrolling": true,
+    "minimap.enabled": false
+  },
+  "workbench": {
+    "list.smoothScrolling": true,
+    "startupEditor": "none",
+    "iconTheme": "file-icons",
+    "colorTheme": "Adwaita Dark"
+  },
+  "html.format.preserveNewLines": false,
+  "nix": {
+    "enableLanguageServer": true,
+    "serverSettings.nil.formatting.command": [
+      "alejandra"
     ]
   },
-  // "editor.tokenColorCustomizations": {
-  //   // snazzy
-  //   // green 5af78e
-  //   // dark blue 57C7FF
-  //   // light blue 9AEDFE
-  //   // yellow F3F99D
-  //   // red FF5843
-  //   // ---
-  //   // red FF006A
-  //   // purple AF00DB
-  //   // ---
-  //   // digitalocean
-  //   // light blue 00C2FA
-  //   // dark blue 2C83FB
-  //   // red F23661
-  //   // green 23DB93
-  //   // ---
-  //   // andromeda
-  //   // purple C74DED
-  //   // ---
-  //   // tickle
-  //   // light green #86BABA
-  //   // ---
-  //   // gnome
-  //   // green 2EBD76
-  //   // blue 1E78E4
-  //   // yellow F1C111
-  //   //---------------------------------------------
-  //   "textMateRules": [
-  //     {
-  //       "scope": "comment",
-  //       "settings": {
-  //         "fontStyle": "italic"
-  //       }
-  //     },
-  //     {
-  //       "scope": "variable",
-  //       "settings": {
-  //         "foreground": "#ffffff",
-  //         "fontStyle": "bold"
-  //       }
-  //     },
-  //     {
-  //       // goldfish fix
-  //       "scope": "support.function",
-  //       "settings": {
-  //         "foreground": "#69D2E7",
-  //       }
-  //     },
-  //     {
-  //       // goldfish fix
-  //       "scope": [
-  //         "constant.numeric",
-  //         "variable.other.constant",
-  //         "string",
-  //         "support.constant",
-  //       ],
-  //       "settings": {
-  //         "foreground": "#23DB93"
-  //       }
-  //     },
-  //     //---------------------------------------------
-  //     // {
-  //     //   //snazzy fix
-  //     //   "scope": [
-  //     //     "constant.numeric",
-  //     //     "variable.other.constant",
-  //     //     "string",
-  //     //     "support.constant",
-  //     //   ],
-  //     //   "settings": {
-  //     //     "foreground": "#5af78e"
-  //     //   }
-  //     // },
-  //     // {
-  //     //   // extra snazzy
-  //     //   "scope": "keyword",
-  //     //   "settings": {
-  //     //     // "foreground": "#FF006A",
-  //     //     "foreground": "#C74DED",
-  //     //     // "foreground": "#FF0095",
-  //     //     "fontStyle": "bold"
-  //     //   }
-  //     // },
-  //     // {
-  //     //   // tickle fix
-  //     //   "scope": [
-  //     //     "constant.numeric",
-  //     //     "variable.other.constant",
-  //     //     "string",
-  //     //     "support.constant",
-  //     //   ],
-  //     //   "settings": {
-  //     //     "foreground": "#86BABA"
-  //     //   }
-  //     // },
-  //     // {
-  //     //   "scope": [
-  //     //     "constant.numeric",
-  //     //     "variable.other.constant",
-  //     //     "string",
-  //     //     "support.constant",
-  //     //   ],
-  //     //   "settings": {
-  //     //     "foreground": "#2EBD76"
-  //     //   }
-  //     // },
-  //     // {
-  //     //   "scope": "entity.name.function",
-  //     //   "settings": {
-  //     //     "foreground": "#9AEDFE"
-  //     //   }
-  //     // },
-  //     // {
-  //     //   "scope": "keyword",
-  //     //   "settings": {
-  //     //     "foreground": "#23DB93",
-  //     //     // "fontStyle": "bold"
-  //     //   }
-  //     // },
-  //     // {
-  //     //   "scope": [
-  //     //     "support.type",
-  //     //     "storage.type",
-  //     //     "entity.name.type"
-  //     //   ],
-  //     //   "settings": {
-  //     //     "foreground": "#FF5843",
-  //     //     // "foreground": "#57C7FF",
-  //     //     "fontStyle": "bold"
-  //     //   }
-  //     // },
-  //   ]
-  // },
-  "editor.wordWrap": "on",
-  "editor.fontLigatures": "'calt', 'ss01'",
-  "editor.formatOnSave": true,
-  "errorLens.margin": "1ch",
-  "editor.semanticTokenColorCustomizations": {
-    "enabled": true // enable for all themes
-  },
-  "gopls": {
-    "ui.semanticTokens": true
-  },
-  "syntax.debugHover": true,
-  "powermode.enabled": true,
-  "powermode.presets": "magic",
-  "powermode.combo.counterEnabled": "hide",
-  "powermode.shake.enabled": false,
-  "editor.smoothScrolling": true,
-  "workbench.list.smoothScrolling": true,
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.size": "fill",
-  "editor.minimap.showSlider": "always",
-  "editor.minimap.autohide": true,
-  "editor.minimap.enabled": false,
-  "autoHide.sideBarDelay": 0,
-  "errorLens.replaceLinebreaksSymbol": " ⏎ ",
-  "git.openRepositoryInParentFolders": "never",
-  "editor.scrollbar.horizontalScrollbarSize": 14,
-  "workbench.editor.wrapTabs": true,
-  // "workbench.colorCustomizations": {
-  //   // gets rid of squiggly underlines
-  //   "editorError.foreground": "#00000000",
-  //   "editorError.background": "#5F1010ff",
-  //   "editorWarning.background": "#883500ff",
-  //   "editorWarning.foreground": "#0000ff00",
-  //   "editorInfo.foreground": "#00ff0000",
-  //   "editorHint.foreground": "#ff000000", // three dots
-  //   "editorHint.border": "#aaaaaa00", // three dots plus
-  //   // mimics gnome colours
-  //   "scrollbar.shadow": "#00000000",
-  //   "activityBar.background": "#303030",
-  //   "titleBar.activeBackground": "#303030",
-  //   "titleBar.inactiveBackground": "#303030",
-  //   "tab.activeBackground": "#303030",
-  //   "tab.inactiveBackground": "#262626",
-  //   "editorGroupHeader.tabsBackground": "#262626",
-  //   "breadcrumb.background": "#262626",
-  //   "tab.hoverBackground": "#363636",
-  //   "panel.background": "#242424",
-  //   "sideBar.background": "#242424",
-  //   "statusBar.background": "#242424",
-  //   "statusBar.noFolderBackground": "#242424",
-  //   "statusBarItem.remoteBackground": "#242424",
-  //   "panelSectionHeader.background": "#00000000",
-  //   "sideBarSectionHeader.background": "#00000000",
-  //   "activityBar.border": "#454545",
-  //   "editorBracketMatch.border": "#454545",
-  //   "editorGroup.border": "#454545",
-  //   "editorGroupHeader.border": "#454545",
-  //   "editorGroupHeader.tabsBorder": "#454545",
-  //   "panel.border": "#454545",
-  //   "panelSectionHeader.border": "#454545",
-  //   "sideBar.border": "#454545",
-  //   "sideBarSectionHeader.border": "#454545",
-  //   "statusBar.border": "#454545",
-  //   "tab.border": "#454545",
-  //   "titleBar.border": "#454545",
-  //   "window.activeBorder": "#454545",
-  //   "tree.indentGuidesStroke": "#45454599",
-  //   "editorIndentGuide.activeBackground1": "#45454599",
-  //   "editorIndentGuide.background1": "#45454580",
-  //   "editorRuler.foreground": "#45454580",
-  //   "editorBracketMatch.background": "#45454520",
-  //   "list.hoverBackground": "#333333",
-  //   "list.inactiveSelectionBackground": "#3a3a3a",
-  //   "input.background": "#3a3a3a",
-  //   "statusBar.foreground": "#cccccc",
-  //   "statusBar.noFolderForeground": "#cccccc",
-  //   "statusBar.debuggingForeground": "#cccccc",
-  //   "statusBarItem.remoteForeground": "#cccccc",
-  //   "sideBar.foreground": "#cccccc",
-  //   "panelTitle.activeBorder": "#cccccc",
-  //   "panelTitle.activeForeground": "#cccccc",
-  //   "activityBar.activeBorder": "#00000000",
-  //   "activityBarBadge.background": "#3584E4",
-  //   "button.background": "#3584E4",
-  //   "button.border": "#3584E4",
-  //   "list.activeSelectionBackground": "#1B497E",
-  //   "list.highlightForeground": "#ffffff",
-  //   "list.activeSelectionForeground": "#ffffff",
-  //   "list.activeSelectionIconForeground": "#ffffff",
-  //   "list.focusHighlightForeground": "#ffffff",
-  //   "editorGutter.addedBackground": "#1F7F56",
-  //   "editorGutter.deletedBackground": "#A51D2D",
-  //   "editorGutter.modifiedBackground": "#1A5FB4",
-  //   "gitDecoration.addedResourceForeground": "#8FF0A4dd",
-  //   "gitDecoration.renamedResourceForeground": "#8FF0A4dd",
-  //   "gitDecoration.untrackedResourceForeground": "#8FF0A4dd",
-  //   "gitDecoration.modifiedResourceForeground": "#FFBE6Fdd",
-  //   "gitDecoration.stageModifiedResourceForeground": "#FFBE6Fdd",
-  //   "gitDecoration.deletedResourceForeground": "#F66151dd",
-  //   "gitDecoration.stageDeletedResourceForeground": "#F66151dd",
-  //   "gitDecoration.ignoredResourceForeground": "#77767B",
-  //   "commandCenter.background": "#444444",
-  //   "commandCenter.border": "#00000000",
-  //   "button.hoverBackground": "#4990e7",
-  //   "focusBorder": "#5f7999",
-  //   "activityBar.foreground": "#ffffff",
-  //   // "editor.background": "#081B4B",
-  //   // "editorGutter.background": "#081B4B",
-  //   // "editor.background": "#070A3A",
-  //   // "editorGutter.background": "#070A3A",
-  //   "editor.background": "#1E1E1E",
-  //   "editorGutter.background": "#1E1E1E",
-  //   "editor.foreground": "#c1c1c1",
-  //   "editorLineNumber.foreground": "#666666",
-  //   "widget.shadow": "#00000033"
-  // },
-  "go.toolsManagement.autoUpdate": true,
-  "evenBetterToml.semanticTokens": true,
-  "editor.stickyScroll.maxLineCount": 10,
-  "gtkTitleBar.mode": "dark",
-  "editor.stickyScroll.enabled": true,
-  "files.exclude": {
-    "**/.trunk/*actions/": true,
-    "**/.trunk/*logs/": true,
-    "**/.trunk/*notifications/": true,
-    "**/.trunk/*out/": true,
-    "**/.trunk/*plugins/": true
-  },
-  "files.watcherExclude": {
-    "**/.trunk/*actions/": true,
-    "**/.trunk/*logs/": true,
-    "**/.trunk/*notifications/": true,
-    "**/.trunk/*out/": true,
-    "**/.trunk/*plugins/": true
-  },
-  "editor.inlayHints.enabled": "offUnlessPressed",
-  "go.inlayHints.rangeVariableTypes": true,
-  "go.inlayHints.parameterNames": true,
-  "go.inlayHints.functionTypeParameters": true,
-  "go.inlayHints.constantValues": true,
-  "go.inlayHints.compositeLiteralTypes": true,
-  "go.inlayHints.compositeLiteralFields": true,
-  "go.inlayHints.assignVariableTypes": true,
-  "js/ts.implicitProjectConfig.checkJs": true,
-  "rust-analyzer.cargo.buildScripts.rebuildOnSave": true,
-  "rust-analyzer.completion.autoself.enable": false,
-  "rust-analyzer.completion.autoimport.enable": false,
-  "rust-analyzer.completion.fullFunctionSignatures.enable": true,
-  "rust-analyzer.diagnostics.previewRustcOutput": true,
-  "rust-analyzer.hover.actions.debug.enable": false,
-  "rust-analyzer.hover.actions.references.enable": true,
-  "rust-analyzer.imports.granularity.enforce": true,
-  "rust-analyzer.imports.prefix": "crate",
-  "rust-analyzer.inlayHints.bindingModeHints.enable": true,
-  "rust-analyzer.inlayHints.closingBraceHints.minLines": 1,
-  "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
-  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
-  "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "always",
-  "rust-analyzer.inlayHints.discriminantHints.enable": "always",
-  "rust-analyzer.inlayHints.implicitDrops.enable": true,
-  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
-  "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
-  "rust-analyzer.lens.references.trait.enable": true,
-  "rust-analyzer.lens.references.method.enable": true,
-  "rust-analyzer.lens.references.enumVariant.enable": true,
-  "rust-analyzer.lens.references.adt.enable": true,
-  "rust-analyzer.restartServerOnConfigChange": true,
-  "rust-analyzer.semanticHighlighting.operator.specialization.enable": true,
-  "rust-analyzer.semanticHighlighting.punctuation.specialization.enable": true,
-  "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang": true,
-  "rust-analyzer.semanticHighlighting.punctuation.enable": true,
-  // "rust-analyzer.trace.extension": true,
-  "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
-  "rust-analyzer.workspace.symbol.search.kind": "all_symbols",
-  // "rust-analyzer.server.path": "rust-analyzer",
-  // "rust-analyzer.server.path": "/usr/lib/rustup/bin/rust-analyzer",
-  "rust-analyzer.check.command": "clippy",
-  "errorLens.removeLinebreaks": false,
-  "errorLens.enabledDiagnosticLevels": [
-    "error",
-    "warning",
-    "info",
-    "hint"
-  ],
-  "errorLens.delayMode": "debounce",
-  "errorLens.alignMessage": {
-    "start": 0,
-    "end": 0
-  },
-  "errorLens.messageTemplate": "<<- $message",
-  "errorLens.decorations": {
-    "errorRange": {
-      "backgroundColor": "#5F1010ff"
-    },
-    "warningRange": {
-      "backgroundColor": "#883500ff"
-    },
-    "infoRange": {
-      // "backgroundColor": "#ffffff"
-    },
-    "hintRange": {
-      "backgroundColor": "#003f3fff"
-    }
-  },
-  "errorLens.problemRangeDecorationEnabled": true,
-  "window.menuBarVisibility": "toggle",
-  "editor.codeLens": false,
-  // "editor.fontWeight": "350",
-  "editor.renderLineHighlight": "gutter",
-  // "rust-analyzer.check.features": "all",
-  "rust-analyzer.cargo.features": "all",
-  "markdown.preview.typographer": true,
-  "markdown-pdf.displayHeaderFooter": false,
-  "markdown-pdf.includeDefaultStyles": false,
-  "html.format.preserveNewLines": false,
-  "liveServer.settings.donotShowInfoMsg": true,
-  "nix.enableLanguageServer": true,
-  "nix.serverSettings": {
-    "nil": {
-      "formatting": {
-        "command": [
-          "alejandra"
-        ]
-      }
-    }
-  },
-  "symbols.hidesExplorerArrows": false,
-  "editor.guides.highlightActiveIndentation": false,
-  "editor.guides.highlightActiveBracketPair": false,
-  "editor.guides.bracketPairsHorizontal": false,
-  "direnv.restart.automatic": true,
-  "git.autofetch": true,
-  "window.titleBarStyle": "custom",
-  "terminal.external.linuxExec": "kgx",
-  "diffEditor.ignoreTrimWhitespace": true,
-  "terminal.integrated.customGlyphs": false,
-  "workbench.iconTheme": "file-icons",
-  "workbench.colorTheme": "Adwaita Dark",
-  "terminal.integrated.smoothScrolling": true,
-  "git.terminalGitEditor": true
-  // "rust-analyzer.cargo.features": [
-  //   "wasm32"
-  // ],
-  // "rust-analyzer.cargo.extraEnv": {
-  //   "RUSTFLAGS": "--cfg target_arch=\"wasm32\""
-  // }
-  // "rust-analyzer.hover.actions.references.enable": true,
-  // "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
-  // "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
-  // "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
-  // "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "always",
-  // "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
-  // "rust-analyzer.inlayHints.bindingModeHints.enable": true,
-  // "rust-analyzer.lens.references.adt.enable": true,
-  // "rust-analyzer.lens.references.enumVariant.enable": true,
-  // "rust-analyzer.lens.references.method.enable": true,
-  // "rust-analyzer.lens.references.trait.enable": true,
-  // "rust-analyzer.semanticHighlighting.operator.specialization.enable": true,
-  // "rust-analyzer.semanticHighlighting.punctuation.enable": true,
-  // "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang": true,
-  // "rust-analyzer.semanticHighlighting.punctuation.specialization.enable": true,
-  // "window.autoDetectColorScheme": true
+  "git": {
+    "autofetch": true,
+    "terminalGitEditor": true
+  }
 }
