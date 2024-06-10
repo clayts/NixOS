@@ -23,10 +23,11 @@
 in {
   home.file.".config/VSCodium/User/settings.json".source = ./settings.json;
   home.file.".config/VSCodium/User/keybindings.json".source = ./keybindings.json;
+  home.file.".local/share/applications/codium.desktop".source = "${pkgs.vscodium}" + "/share/applications/codium.desktop";
   home.packages = [
     (pkgs.writeShellApplication
       {
-        name = "code";
+        name = "codium";
         runtimeInputs =
           [
             (pkgs.vscode-with-extensions.override {
