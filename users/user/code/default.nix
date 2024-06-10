@@ -19,18 +19,6 @@
       # Git
       extensions = [mhutchie.git-graph];
     }
-    # {
-    #   # Direnv
-    #   extensions = [mkhl.direnv];
-    # }
-    # {
-    #   # Rust
-    #   extensions = [serayuzgur.crates tamasfe.even-better-toml rust-lang.rust-analyzer];
-    # }
-    # {
-    #   # Go
-    #   extensions = [golang.go];
-    # }
   ];
   extensions = inputs.nix-vscode-extensions.extensions."${pkgs.stdenv.hostPlatform.system}".vscode-marketplace;
 in {
@@ -51,3 +39,17 @@ in {
       })
   ];
 }
+# Old extensions were:
+# {
+#   # Direnv
+#   extensions = [mkhl.direnv];
+# }
+# {
+#   # Rust
+#   extensions = [serayuzgur.crates tamasfe.even-better-toml rust-lang.rust-analyzer];
+# }
+# {
+#   # Go
+#   extensions = [golang.go];
+# }
+
