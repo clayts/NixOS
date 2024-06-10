@@ -37,4 +37,5 @@
   },
   "git.autofetch": true,
   "git.terminalGitEditor": true,
+  "git.confirmSync": false
 }
