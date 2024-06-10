@@ -3,7 +3,6 @@
   inputs,
   ...
 }: let
-  extensions = inputs.nix-vscode-extensions.extensions."${pkgs.stdenv.hostPlatform.system}".vscode-marketplace;
   bundles = with extensions;
   with pkgs; [
     {
@@ -33,6 +32,7 @@
     #   extensions = [golang.go];
     # }
   ];
+  extensions = inputs.nix-vscode-extensions.extensions."${pkgs.stdenv.hostPlatform.system}".vscode-marketplace;
 in {
   home.file.".config/VSCodium/User/settings.json".source = ./settings.json;
   home.file.".config/VSCodium/User/keybindings.json".source = ./keybindings.json;
