@@ -2,46 +2,52 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  extensions = inputs.nix-vscode-extensions.extensions."${pkgs.stdenv.hostPlatform.system}".vscode-marketplace;
+  bundles = with extensions;
+  with pkgs; [
+    {
+      # Theme
+      extensions = [piousdeer.adwaita-theme file-icons.file-icons];
+      packages = [];
+    }
+    {
+      # Nix
+      extensions = [jnoortheen.nix-ide];
+      packages = [alejandra nil];
+    }
+    {
+      # Git
+      extensions = [mhutchie.git-graph];
+    }
+    # {
+    #   # Direnv
+    #   extensions = [mkhl.direnv];
+    # }
+    # {
+    #   # Rust
+    #   extensions = [serayuzgur.crates tamasfe.even-better-toml rust-lang.rust-analyzer];
+    # }
+    # {
+    #   # Go
+    #   extensions = [golang.go];
+    # }
+  ];
+in {
   home.file.".config/VSCodium/User/settings.json".source = ./settings.json;
   home.file.".config/VSCodium/User/keybindings.json".source = ./keybindings.json;
-  home.packages = let
-    extensions = inputs.nix-vscode-extensions.extensions."${pkgs.stdenv.hostPlatform.system}".vscode-marketplace;
-  in [
+  home.packages = [
     (pkgs.symlinkJoin
       {
         name = "code";
-        paths = [
-          # Nix
-          pkgs.nil
-          pkgs.alejandra
-
-          (pkgs.vscode-with-extensions.override {
-            vscode = pkgs.vscodium;
-            vscodeExtensions = with extensions; [
-              # Theme
-              piousdeer.adwaita-theme
-              file-icons.file-icons
-
-              # Rust
-              serayuzgur.crates
-              tamasfe.even-better-toml
-              rust-lang.rust-analyzer
-
-              # Go
-              golang.go
-
-              # Nix
-              jnoortheen.nix-ide
-
-              # Git
-              mhutchie.git-graph
-
-              # Direnv
-              mkhl.direnv
-            ];
-          })
-        ];
+        paths =
+          [
+            (pkgs.vscode-with-extensions.override {
+              vscode = pkgs.vscodium;
+              vscodeExtensions = builtins.concatLists (builtins.catAttrs "extensions" bundles);
+            })
+          ]
+          ++ (builtins.concatLists (builtins.catAttrs "packages" bundles));
       })
   ];
 }
