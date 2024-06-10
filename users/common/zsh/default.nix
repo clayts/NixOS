@@ -23,6 +23,7 @@ in {
   };
   programs.zsh = {
     enable = true;
+    history.share = false;
     enableCompletion = true;
     enableVteIntegration = true;
     autosuggestion.enable = true;
