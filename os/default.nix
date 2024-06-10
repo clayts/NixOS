@@ -1,7 +1,6 @@
 {
   imports = [
-    ../common/base.nix
-
+    ./base.nix
     ./sound.nix
     ./networking.nix
     ./fingerprint.nix

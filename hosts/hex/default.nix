@@ -9,7 +9,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ./hardware.nix
 
     # OS
-    ../../os/pc
+    ../../os
     ../../language/uk.nix
 
     # Users
