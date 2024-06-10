@@ -15,7 +15,7 @@
         "settings": {
           "fontStyle": "italic"
         }
-      },
+      }
     ]
   },
   // "editor.tokenColorCustomizations": {
@@ -157,10 +157,10 @@
   "editor.formatOnSave": true,
   "errorLens.margin": "1ch",
   "editor.semanticTokenColorCustomizations": {
-    "enabled": true, // enable for all themes
+    "enabled": true // enable for all themes
   },
   "gopls": {
-    "ui.semanticTokens": true,
+    "ui.semanticTokens": true
   },
   "syntax.debugHover": true,
   "powermode.enabled": true,
@@ -344,10 +344,10 @@
   "errorLens.messageTemplate": "<<- $message",
   "errorLens.decorations": {
     "errorRange": {
-      "backgroundColor": "#5F1010ff",
+      "backgroundColor": "#5F1010ff"
     },
     "warningRange": {
-      "backgroundColor": "#883500ff",
+      "backgroundColor": "#883500ff"
     },
     "infoRange": {
       // "backgroundColor": "#ffffff"
@@ -391,7 +391,7 @@
   "workbench.iconTheme": "file-icons",
   "workbench.colorTheme": "Adwaita Dark",
   "terminal.integrated.smoothScrolling": true,
-  "git.terminalGitEditor": true,
+  "git.terminalGitEditor": true
   // "rust-analyzer.cargo.features": [
   //   "wasm32"
   // ],
