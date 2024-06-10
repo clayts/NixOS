@@ -8,7 +8,6 @@
     {
       # Theme
       extensions = [piousdeer.adwaita-theme file-icons.file-icons];
-      packages = [];
     }
     {
       # Nix
