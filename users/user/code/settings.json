@@ -1,29 +1,4 @@
 {
-  "terminal.integrated.letterSpacing": 1,
-  "terminal.integrated.smoothScrolling": true,
-  "window.restoreWindows": "none",
-  "window.titleBarStyle": "custom",
-  "window.menuBarVisibility": "toggle",
-  "explorer.confirmDragAndDrop": false,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "comment",
-        "settings": {
-          "fontStyle": "italic"
-        }
-      }
-    ]
-  },
-  "editor.wordWrap": "on",
-  "editor.fontLigatures": "'calt', 'ss01'",
-  "editor.formatOnSave": true,
-  "editor.smoothScrolling": true,
-  "editor.minimap.enabled": false,
-  "workbench.list.smoothScrolling": true,
-  "workbench.startupEditor": "none",
-  "workbench.iconTheme": "file-icons",
-  "workbench.colorTheme": "Adwaita Dark",
   "html.format.preserveNewLines": false,
   "nix.enableLanguageServer": true,
   "nix.serverSettings": {
@@ -35,8 +10,34 @@
       }
     }
   },
+  "workbench.list.smoothScrolling": true,
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "file-icons",
+  "workbench.colorTheme": "Adwaita Dark",
+  "window.restoreWindows": "none",
+  "window.titleBarStyle": "custom",
+  "window.menuBarVisibility": "toggle",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "terminal.integrated.letterSpacing": 1,
+  "terminal.integrated.smoothScrolling": true,
+  "explorer.confirmDragAndDrop": false,
+  "editor.wordWrap": "on",
+  "editor.fontLigatures": "'calt', 'ss01'",
+  "editor.formatOnSave": true,
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": false,
   "git.autofetch": true,
   "git.terminalGitEditor": true,
   "git.confirmSync": false,
   "git.suggestSmartCommit": false,
+  "breadcrumbs.enabled": false
 }
