@@ -15,9 +15,9 @@
       ../common/zsh
       ../common/librewolf.nix
       ../common/gnome
-      ./gnome.nix
-      ./librewolf.nix
+      ./gnome
       ./code
+      ./librewolf.nix
     ];
     home.packages = with pkgs; [
       steam
