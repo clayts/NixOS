@@ -37,7 +37,8 @@ in {
           ]
           ++ (builtins.concatLists (builtins.catAttrs "packages" bundles));
         text = ''
-          exec codium "$@" 2> "$HOME/.config/Code/logs/stderr"
+          mkdir -p "$HOME/.config/VSCodium/logs"
+          exec codium "$@" 2> "$HOME/.config/VSCodium/logs/stderr"
         '';
       })
   ];
