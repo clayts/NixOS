@@ -1,14 +1,13 @@
 {pkgs, ...}: {
+  imports = [../common/home-manager.nix];
+
   users.users."user" = {
+    description = "User";
     isNormalUser = true;
     shell = pkgs.zsh;
-    description = "User";
     extraGroups = ["networkmanager" "wheel"];
   };
 
-  programs.zsh.enable = true;
-
-  imports = [../common/home-manager.nix];
   home-manager.users."user" = {
     home.stateVersion = "24.11";
     imports = [

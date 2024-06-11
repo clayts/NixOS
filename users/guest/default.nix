@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [../common/home-manager.nix];
-  programs.zsh.enable = true;
 
   users.users."guest" = {
     description = "Guest";
