@@ -1,3 +1,15 @@
+echo "Fetching index"
+baseURL="https://raw.githubusercontent.com/clayts/Wallpapers/master"
+indexPath="index.txt"
+index=($(curl -s "$baseURL/$indexPath"))
+echo "Index contains ${#index[@]} images"
+path="$(printf "%s\n" "${index[@]}" | shuf -n1)"
+if [ "$path" = "" ]
+then
+    echo "Failed"
+    exit 1
+fi
+echo "Fetching $path"
 mkdir -p ~/.wallpaper
 cd ~/.wallpaper
 oldFile=$(ls)
@@ -13,18 +25,6 @@ then
     echo "Error"
     exit 1
 fi
-echo "Fetching index"
-baseURL="https://raw.githubusercontent.com/clayts/Wallpapers/master"
-indexPath="index.txt"
-index=($(curl -s "$baseURL/$indexPath"))
-echo "Index contains ${#index[@]} images"
-path="$(printf "%s\n" "${index[@]}" | shuf -n1)"
-if [ "$path" = "" ]
-then
-    echo "Failed"
-    exit 1
-fi
-echo "Fetching $path"
 temp=$(mktemp) &&
 (
     curl -s "$baseURL/$path" > $temp &&

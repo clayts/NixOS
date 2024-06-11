@@ -11,7 +11,7 @@
     ];
   home.file.".config/autostart/gnome-wallpaper-fetch.desktop".text = ''
     [Desktop Entry]
-    Exec=sh -c "while true; do if [ -d "$HOME/.wallpaper" ]; then sleep 12h; fi; gnome-wallpaper-fetch; done"
+    Exec=sh -c "while true; do if [ -d "$HOME/.wallpaper" ]; then sleep 12h; else sleep 1m; fi; gnome-wallpaper-fetch; done"
     Name=Wallpaper Fetcher
     Terminal=false
     Type=Application
