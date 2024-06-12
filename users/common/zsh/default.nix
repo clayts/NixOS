@@ -16,6 +16,7 @@ in {
     ls = "eza --icons=always --group-directories-first";
     lt = "eza --tree --icons=always --group-directories-first";
     la = "eza -al --icons=always --time-style=relative --color-scale-mode=gradient --color-scale --group-directories-first";
+    cd = "z";
   };
   home.sessionVariables = {
     EDITOR = "micro";
@@ -23,6 +24,7 @@ in {
     NIXOS_OZONE_WL = "1"; # Ask Electron and Chromium apps to run in wayland mode
     MOZ_ENABLE_WAYLAND = "1"; # Ask librewolf/firefox to run in wayland mode
   };
+  programs.zoxide.enable = true;
   programs.zsh = {
     enable = true;
     history.share = false;
