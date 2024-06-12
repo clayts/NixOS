@@ -5,8 +5,6 @@
 }: {
   system.stateVersion = "24.11";
 
-  boot.
-
   # Boot
   boot = {
     ## Kernel
