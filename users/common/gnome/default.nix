@@ -31,6 +31,10 @@ in {
   };
 
   dconf.settings = {
+    "org/gnome/TextEditor" = {
+      restore-session =
+        false;
+    };
     "org/gnome/desktop/interface" = {
       font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.sansSerif 0) + " " + "11"}";
       document-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.serif 0) + " " + "11"}";
