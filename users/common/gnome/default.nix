@@ -2,30 +2,29 @@
   pkgs,
   config,
   ...
-}: {
-  home.packages = let
-    rounded-window-corners-reborn = pkgs.callPackage ./rounded-window-corners-reborn.nix {};
-  in
-    with pkgs; [
-      bibata-cursors
-      papirus-icon-theme
-      rounded-window-corners-reborn
-      gnomeExtensions.grand-theft-focus
-      gnomeExtensions.appindicator
+}: let
+  rounded-window-corners-reborn = pkgs.callPackage ./rounded-window-corners-reborn.nix {};
+in {
+  home.packages = with pkgs; [
+    bibata-cursors
+    papirus-icon-theme
+    rounded-window-corners-reborn
+    gnomeExtensions.grand-theft-focus
+    gnomeExtensions.appindicator
 
-      # Apps
-      gnome-console
-      gnome.cheese
-      loupe
-      gnome.file-roller
-      gnome.gnome-calculator
-      gnome.gnome-system-monitor
-      gnome.gnome-characters
-      gnome.gnome-screenshot
-      gnome.nautilus
-      celluloid
-      gnome-text-editor
-    ];
+    # Apps
+    gnome-console
+    gnome.cheese
+    loupe
+    gnome.file-roller
+    gnome.gnome-calculator
+    gnome.gnome-system-monitor
+    gnome.gnome-characters
+    gnome.gnome-screenshot
+    gnome.nautilus
+    celluloid
+    gnome-text-editor
+  ];
   xdg.desktopEntries.cups = {
     name = "";
     noDisplay = true;
@@ -53,10 +52,10 @@
       favorite-apps = [
         "librewolf.desktop"
       ];
-      enabled-extensions = [
-        "grand-theft-focus@zalckos.github.com"
-        "appindicatorsupport@rgcjonas.gmail.com"
-        "rounded-window-corners@fxgn"
+      enabled-extensions = with pkgs.gnomeExtensions; [
+        grand-theft-focus.extensionUuid
+        appindicator.extensionUuid
+        rounded-window-corners-reborn.extensionUuid
       ];
     };
   };

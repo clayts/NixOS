@@ -35,3 +35,4 @@ buildNpmPackage rec {
     description = "Rounded window corners GNOME extension";
   };
 }
+// {extensionUuid = "rounded-window-corners@fxgn";}
