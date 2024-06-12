@@ -5,6 +5,9 @@
 }: {
   system.stateVersion = "24.11";
 
+  # Kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Boot
   boot = {
     loader.systemd-boot.enable = true;
