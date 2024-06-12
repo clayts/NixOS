@@ -49,7 +49,7 @@ in {
       monospace-font-name = "${(builtins.elemAt config.fonts.fontconfig.defaultFonts.monospace 0) + " " + "Semilight 11"}";
       icon-theme = "Papirus";
       cursor-theme = "Bibata-Modern-Classic";
-      gtk-enable-primary-paste = false;
+      gtk-enable-primary-paste = false; # Disable middle-click paste as it can accidentally paste stuff when scrolling
     };
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
