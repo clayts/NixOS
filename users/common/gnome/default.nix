@@ -25,10 +25,14 @@ in {
     celluloid
     gnome-text-editor
   ];
+
+  # Hide annoying CUPS icon which doesn't do much
   xdg.desktopEntries.cups = {
     name = "";
     noDisplay = true;
   };
+
+  # Disable the hidden micro.desktop file which makes it the default editor for everything in GNOME
   xdg.desktopEntries.micro = {
     name = "";
     noDisplay = true;
