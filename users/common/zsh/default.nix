@@ -17,6 +17,9 @@ in {
     lt = "eza --tree --icons=always --group-directories-first";
     la = "eza -al --icons=always --time-style=relative --color-scale-mode=gradient --color-scale --group-directories-first";
     cd = "z";
+
+    # Occasional
+    cool-retro-term = ''SHLVL=0 QT_QPA_PLATFORM=wayland nix shell nixpkgs#cool-retro-term -c cool-retro-term --fullscreen -p "Default Pixelated"'';
   };
   home.sessionVariables = {
     EDITOR = "micro";
