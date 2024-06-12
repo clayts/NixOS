@@ -5,7 +5,6 @@ in {
     fzf
     eza
     fd
-    micro
   ];
   programs.micro = {
     enable = true;
