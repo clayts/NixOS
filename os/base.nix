@@ -31,14 +31,16 @@
   ## Collect Nix Garbage
   nix = {
     enable = true;
-    settings.auto-optimise-store = true;
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
+    };
     optimise.automatic = true;
     gc = {
       automatic = true;
       dates = "daily";
       options = "--delete-older-than 7d";
     };
-    settings.experimental-features = ["nix-command" "flakes"];
   };
   ## Allow unfree and experimental
   nixpkgs.config.allowUnfree = true;
@@ -54,8 +56,6 @@
   # Remove bloat
   documentation.nixos.enable = false;
   services.xserver.excludePackages = [pkgs.xterm];
-  services.gnome.core-utilities.enable = false;
-  environment.gnome.excludePackages = [pkgs.gnome-tour];
 
   # Fix sudo shlvl
   security.sudo.extraConfig = ''

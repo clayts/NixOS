@@ -1,12 +1,18 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   services.xserver = {
     enable = true;
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
   };
   services.gnome = {
+    core-utilities.enable = false;
     gnome-online-accounts.enable = true;
   };
+  environment.gnome.excludePackages = [pkgs.gnome-tour];
 
   # GDM should not allow fingerprint authentication for login as it breaks the keyring.
   # In addition, fingerprint authentication seems to be slow and buggy without these hacks.
