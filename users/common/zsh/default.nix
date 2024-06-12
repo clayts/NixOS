@@ -7,7 +7,10 @@ in {
     fd
     micro
   ];
-  programs.micro.settings.colorscheme = "cmc-16";
+  programs.micro = {
+    enable = true;
+    settings.colorscheme = "cmc-16";
+  };
   home.shellAliases = {
     edit = "$EDITOR";
     open = "xdg-open";
