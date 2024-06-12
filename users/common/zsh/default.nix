@@ -19,7 +19,7 @@ in {
     cd = "z";
 
     # Occasional
-    cool-retro-term = ''SHLVL=0 QT_QPA_PLATFORM=wayland nix shell nixpkgs#cool-retro-term -c cool-retro-term --fullscreen -p "Default Pixelated"'';
+    cool-retro-term = ''SHLVL=0 nix shell nixpkgs#cool-retro-term -c cool-retro-term --fullscreen -p "Default Pixelated"'';
   };
   home.sessionVariables = {
     EDITOR = "micro";
