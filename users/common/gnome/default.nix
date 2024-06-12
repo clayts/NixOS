@@ -29,6 +29,10 @@ in {
     name = "";
     noDisplay = true;
   };
+  xdg.desktopEntries.micro = {
+    name = "";
+    noDisplay = true;
+  };
 
   dconf.settings = {
     "org/gnome/TextEditor" = {
