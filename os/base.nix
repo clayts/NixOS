@@ -5,14 +5,12 @@
 }: {
   system.stateVersion = "24.11";
 
-  # Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.
 
   # Boot
   boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    plymouth.enable = true;
+    ## Kernel
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "quiet"
       "splash"
@@ -20,22 +18,32 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
+    ## Boot loader
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      timeout = 0;
+    };
+    plymouth.enable = true;
     initrd.verbose = false;
     consoleLogLevel = 0;
-    loader.timeout = 0;
   };
 
   # Nix
   ## Collect Nix Garbage
-  nix.enable = true;
-  nix.settings.auto-optimise-store = true;
-  nix.gc.automatic = true;
-  nix.gc.dates = "daily";
-  nix.gc.options = "--delete-older-than 7d";
-  nix.optimise.automatic = true;
+  nix = {
+    enable = true;
+    settings.auto-optimise-store = true;
+    optimise.automatic = true;
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 7d";
+      settings.experimental-features = ["nix-command" "flakes"];
+    };
+  };
   ## Allow unfree and experimental
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
   ## Needed to build flakes etc
   environment.systemPackages = with pkgs; [git gh];
   ## Prevents annoying error messages
