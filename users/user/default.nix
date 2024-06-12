@@ -15,6 +15,7 @@
       ../common/zsh
       ../common/librewolf.nix
       ../common/gnome
+      ../common/nix.nix
       ./gnome
       ./code
       ./librewolf.nix

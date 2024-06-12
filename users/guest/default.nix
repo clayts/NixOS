@@ -14,6 +14,7 @@
       ../common/zsh
       ../common/librewolf.nix
       ../common/gnome
+      ../common/nix.nix
     ];
   };
 }
