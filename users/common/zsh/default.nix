@@ -17,9 +17,10 @@ in {
     lt = "eza --tree --icons=always --group-directories-first";
     la = "eza -al --icons=always --time-style=relative --color-scale-mode=gradient --color-scale --group-directories-first";
     cd = "z";
+    ls-new = "find . -type f -printf '%TF %TT %p\n' | sort | tail -1";
 
     # Occasional
-    cool-retro-term = ''SHLVL=0 nix shell nixpkgs#cool-retro-term -c cool-retro-term --fullscreen -p "Default Pixelated"'';
+    crt = ''SHLVL=0 nix shell nixpkgs#cool-retro-term -c cool-retro-term --fullscreen --profile "Default Pixelated";rm -Rf ~/.config/cool-retro-term ~/.local/share/cool-retro-term'';
   };
   home.sessionVariables = {
     EDITOR = "micro";
@@ -74,9 +75,4 @@ in {
 
     '';
   };
-
-  # still needed?
-  # system.userActivationScripts.empty-zshrc = {text = "touch .zshrc";};
-
-  # setup micro
 }
