@@ -19,7 +19,7 @@ in {
     cd = "z";
     ls-new = "find . -type f -printf '%TF %TT %p\n' | sort | tail -1";
 
-    # Occasional
+    # Ephemeral
     crt = ''SHLVL=0 nix shell nixpkgs#cool-retro-term -c cool-retro-term --fullscreen --profile "Default Pixelated";rm -Rf ~/.config/cool-retro-term ~/.local/share/cool-retro-term'';
   };
   home.sessionVariables = {
