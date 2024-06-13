@@ -17,10 +17,7 @@ in {
     lt = "eza --tree --icons=always --group-directories-first";
     la = "eza -al --icons=always --time-style=relative --color-scale-mode=gradient --color-scale --group-directories-first";
     cd = "z";
-    ls-new = "find . -type f -printf '%TF %TT %p\n' | sort | tail -1";
-
-    # Ephemeral
-    crt = ''SHLVL=0 nix shell nixpkgs#cool-retro-term -c cool-retro-term --fullscreen --profile "Default Pixelated";rm -Rf ~/.config/cool-retro-term ~/.local/share/cool-retro-term'';
+    ls-new = "find . -type f -printf '%TF %TT %p\n' | sort";
   };
   home.sessionVariables = {
     EDITOR = "micro";
