@@ -11,6 +11,7 @@ in {
     rounded-window-corners-reborn
     gnomeExtensions.grand-theft-focus
     gnomeExtensions.appindicator
+    gnomeExtensions.alphabetical-app-grid
 
     # Apps
     gnome-console
@@ -82,6 +83,7 @@ in {
         grand-theft-focus.extensionUuid
         appindicator.extensionUuid
         rounded-window-corners-reborn.extensionUuid
+        alphabetical-app-grid.extensionUuid
       ];
     };
   };
