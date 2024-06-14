@@ -12,11 +12,11 @@
     home.stateVersion = "24.11";
     imports = [
       ../common/fonts.nix
-      ../common/zsh
       ../common/librewolf.nix
       ../common/gnome
       ../common/nix.nix
       ./gnome
+      ./zsh
       ./code
       ./librewolf.nix
     ];
