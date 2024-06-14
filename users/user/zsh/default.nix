@@ -17,7 +17,7 @@ in {
     lt = "eza --tree --icons=always --group-directories-first";
     la = "eza -al --icons=always --time-style=relative --color-scale-mode=gradient --color-scale --group-directories-first";
     cd = "z";
-    ls-new = "find . -type f -printf '%TF %TT %p\n' | sort";
+    ls-new = "find . -type f -printf '%BF %BT %p\n' | sort";
   };
   home.sessionVariables = {
     EDITOR = "micro";
