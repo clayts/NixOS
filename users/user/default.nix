@@ -19,6 +19,7 @@
       ./zsh
       ./code
       ./librewolf.nix
+      ./crt
     ];
     home.packages = with pkgs; [
       steam
