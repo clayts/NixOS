@@ -26,7 +26,7 @@ in {
     gnome-text-editor
   ];
 
-  # Hide annoying CUPS icon which doesn't do much
+  # Hide annoying CUPS icon
   xdg.desktopEntries.cups = {
     name = "";
     noDisplay = true;
@@ -47,7 +47,9 @@ in {
   # Hide Desktop
   xdg.userDirs = {
     enable = true;
+    createDirectories = true;
     desktop = "${config.home.homeDirectory}/.Desktop";
+    templates = "${config.home.homeDirectory}/.Templates";
   };
 
   dconf.settings = {
