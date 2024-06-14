@@ -12,7 +12,7 @@
     core-utilities.enable = false;
     gnome-online-accounts.enable = true;
   };
-  environment.gnome.excludePackages = with pkgs; [gnome-tour gnome-screenshot];
+  environment.gnome.excludePackages = with pkgs; [gnome-tour];
 
   # GDM should not allow fingerprint authentication for login as it breaks the keyring.
   # In addition, fingerprint authentication seems to be slow and buggy without these hacks.
