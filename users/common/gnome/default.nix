@@ -38,7 +38,10 @@ in {
     noDisplay = true;
   };
 
-  xdg.userDirs.desktop = "${config.home.homeDirectory}/.Desktop";
+  xdg.userDirs = {
+    enable = true;
+    desktop = "${config.home.homeDirectory}/.Desktop";
+  };
 
   dconf.settings = {
     "org/gnome/TextEditor" = {
