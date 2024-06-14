@@ -38,19 +38,7 @@ in {
     noDisplay = true;
   };
 
-  # home.file.".local/share/applications/crt.desktop".text = ''
-  #   [Desktop Entry]
-  #   Comment=Use the command line the old way
-  #   Exec=sh -c "SHLVL=0 nix shell nixpkgs#cool-retro-term -c cool-retro-term --fullscreen --profile 'Default Pixelated';rm -Rf ~/.config/cool-retro-term ~/.local/share/cool-retro-term"
-  #   GenericName=Terminal emulator
-  #   Icon=cool-retro-term
-  #   Name=Cool Retro Term
-  #   Categories=System;TerminalEmulator;
-  #   StartupNotify=true
-  #   Terminal=false
-  #   Type=Application
-  #   Keywords=shell;prompt;command;commandline;
-  # '';
+  xdg.userDirs.desktop = "${config.home.homeDirectory}/.Desktop";
 
   dconf.settings = {
     "org/gnome/TextEditor" = {
