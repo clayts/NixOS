@@ -32,12 +32,19 @@ in {
     noDisplay = true;
   };
 
+  # Hide extraneous screenshot shortcut
+  xdg.desktopEntries."org.gnome.Screenshot" = {
+    name = "";
+    noDisplay = true;
+  };
+
   # Disable the hidden micro.desktop file which makes it the default editor for everything in GNOME
   xdg.desktopEntries.micro = {
     name = "";
     noDisplay = true;
   };
 
+  # Hide Desktop
   xdg.userDirs = {
     enable = true;
     desktop = "${config.home.homeDirectory}/.Desktop";

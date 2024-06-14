@@ -17,6 +17,7 @@
     Type=Application
     Version=1.4
   '';
+
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = ["librewolf.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop"];
@@ -24,5 +25,10 @@
     "org/gnome/evolution-data-server.calendar" = {
       notify-enable-audio = false; # Silences annoying daily beeps
     };
+    "org/gnome/desktop/app-folders" = {folder-children = ["Utilities" "Games"];};
+    "org/gnome/desktop/app-folders/folders/Games" = {name = "Games";};
+    "org/gnome/desktop/app-folders/folders/Games" = {apps = ["crt.desktop" "steam.desktop"];};
+    "org/gnome/desktop/app-folders/folders/Utilities" = {name = "Utilities";};
+    "org/gnome/desktop/app-folders/folders/Utilities" = {apps = ["org.gnome.Logs.desktop" "org.gnome.Settings.desktop" "org.gnome.SystemMonitor.desktop" "org.gnome.Characters.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.baobab.desktop" "org.gnome.FileRoller.desktop" "org.gnome.Extensions.desktop"];};
   };
 }
