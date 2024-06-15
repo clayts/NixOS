@@ -17,7 +17,6 @@ in {
     lt = "eza --tree --icons=always --group-directories-first";
     la = "eza -al --icons=always --time-style=relative --color-scale-mode=gradient --color-scale --group-directories-first";
     cd = "z";
-    ls-new = "find . -type f -printf '%BF %BT %p\n' | sort";
     pkg-tree = "function _pkg-tree() { lt $(nix build $* --print-out-paths --no-link); }; _pkg-tree";
   };
   home.sessionVariables = {
