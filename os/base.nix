@@ -65,7 +65,4 @@
   # User settings
   environment.localBinInPath = true;
   programs.zsh.enable = builtins.any (user: user.shell == pkgs.zsh) (builtins.attrValues config.users.users);
-
-  # AppImages
-  programs.appimage.binfmt = true;
 }
