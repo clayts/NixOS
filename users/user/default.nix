@@ -20,6 +20,7 @@
       ./code
       ./librewolf.nix
       ./crt
+      ./sabaki.nix
     ];
     home.packages = with pkgs; [
       steam
