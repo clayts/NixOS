@@ -14,6 +14,8 @@
   };
   environment.gnome.excludePackages = with pkgs; [gnome-tour];
 
+  virtualisation.libvirtd.enable = true; # for gnome-boxes
+
   # GDM should not allow fingerprint authentication for login as it breaks the keyring.
   # In addition, fingerprint authentication seems to be slow and buggy without these hacks.
   # Most of these options don't seem to work as expected individually, but in combination
